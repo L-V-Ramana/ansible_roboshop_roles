@@ -12,7 +12,13 @@
   ansible.builtin.package:
     name: mysql
     state: present
-
+- name: installing python dependencies
+  ansible.builtin.pip:
+    name: "{{item}}"
+    state: present
+  loop:
+    - PyMySQL
+    
 - name: Restore database ignoring errors
   community.mysql.mysql_db:
     name: all
