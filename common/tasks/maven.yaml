@@ -6,9 +6,9 @@
 - name: maven dependencies download
   ansible.builtin.command: mvn clean package
   args:
-    chmod: /app
+    chdir: /app
 
 - name: renamming to shipping.jar
   ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
   args:
-    chmod: /app
+    chdir: /app
