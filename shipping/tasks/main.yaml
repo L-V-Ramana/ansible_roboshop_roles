@@ -9,7 +9,7 @@
     tasks_from: maven.yaml
 
 - name: systemd setup
-  include-role:
+  include_role:
     name: common
     tasks_from: serviceusersetup.yaml
 
