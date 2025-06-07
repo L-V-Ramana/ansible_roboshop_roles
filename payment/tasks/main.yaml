@@ -1,15 +1,15 @@
 - name: load app content
-  include_roles:
+  include_role:
     name: common
     tasks_from: appsetup.yaml
     
 
 - name: pytho installation
-  include_roles:
+  include_role:
     name: common
     tasks_from: python.yaml
 
 - name: load and create user 
-  include_roles:
+  include_role:
     name: common
     tasks_from: serviceusersetup.yaml
