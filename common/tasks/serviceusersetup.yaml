@@ -2,8 +2,8 @@
   ansible.builtin.user:
     name: roboshop
     home: /app
-    shell: sbin/nologin
-    system: yes
+    shell: /sbin/nologin
+    system: true
 
   name: copying "{{ component }}".service to systemd
   ansible.builtin.copy:
