@@ -1,0 +1,3 @@
+cart_host: cart.ramana.site
+user_host: user.ramana.site
+rabbirmq_host: rabbirmq.ramana.site
