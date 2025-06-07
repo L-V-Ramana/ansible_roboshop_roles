@@ -5,7 +5,7 @@
     system: true
     home: /app
 
-  name: copying "{{ component }}".service to systemd
+- name: copying "{{ component }}".service to systemd
   ansible.builtin.copy:
     src: "{{component}}.service.j2"
     dest: /etc/systemd/system/{{component}}.service
