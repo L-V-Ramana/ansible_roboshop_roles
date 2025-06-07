@@ -1,0 +1,8 @@
+- name: insatll mysql
+  ansible.builtin.command: dnf install mysql-server -y
+
+- name: restart and enable mysql
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
