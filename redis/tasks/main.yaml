@@ -1,5 +1,5 @@
 - name: install redis
-  import_role:
+  include_role:
    name: common
    role_from: redis.yaml
 
