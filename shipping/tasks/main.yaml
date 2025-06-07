@@ -18,7 +18,8 @@
     state: present
   loop:
     - PyMySQL
-    
+    - cryptography
+
 - name: Restore database ignoring errors
   community.mysql.mysql_db:
     name: all
