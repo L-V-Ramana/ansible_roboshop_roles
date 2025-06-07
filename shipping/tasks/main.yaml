@@ -8,11 +8,6 @@
     name: common
     tasks_from: maven.yaml
 
-- name: systemd setup
-  include_role:
-    name: common
-    tasks_from: serviceusersetup.yaml
-
 - name: install mysql
   ansible.builtin.package:
     name: mysql
