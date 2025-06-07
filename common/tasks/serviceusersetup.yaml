@@ -17,5 +17,5 @@
 - name: cataloge restart and enable
   ansible.builtin.service:
     name: "{{component}}" 
-    state: restatrted
+    state: restarted
     enabled: yes
