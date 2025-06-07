@@ -1,12 +1,14 @@
-- name: downnload nodejs
-  include_role:
-    name: common
-    tasks_from: nodejs.yaml
+
 
 - name: app setup
   include_role:
     name: common
     tasks_from: appsetup.yaml
+
+- name: downnload nodejs
+  include_role:
+    name: common
+    tasks_from: nodejs.yaml
 
 - name: install appplication
   include_role: 
