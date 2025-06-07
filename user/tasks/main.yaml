@@ -1,15 +1,15 @@
 - name: creating system user and dowloading app
-  load_roles:
+  include_role:
     name: common
     tasks_from:  appsetup.yaml
 
 - name: nodejs setup
-  load_roles:
+  include_role:
     name: common
     tasks_from: nodejs
 
 - name: reload and restart system
-  import_roles:
+  include_roles:
     name: common
     tasks_from: serviceusersetup
 
