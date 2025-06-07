@@ -12,10 +12,11 @@
   ansible.builtin.package:
     name: mysql
     state: present
+
 - name: installing python dependencies
   ansible.builtin.pip:
     name: "{{item}}"
-    state: present
+    executable: pip3.9
   loop:
   - PyMySQL
   - cryptography
