@@ -4,7 +4,7 @@
     tasks_from: appsetup.yaml
     
 
-- name: pytho installation
+- name: python installation
   include_role:
     name: common
     tasks_from: python.yaml
