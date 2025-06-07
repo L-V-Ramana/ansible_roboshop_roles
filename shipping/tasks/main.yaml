@@ -32,3 +32,9 @@
   - /app/db/schema.sql
   - /app/db/app-user.sql 
   - /app/db/master-data.sql
+
+
+- name: install appplication
+  include_role: 
+    name: common
+    tasks_from: serviceusersetup.yaml
