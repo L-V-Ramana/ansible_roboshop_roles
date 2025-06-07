@@ -1,0 +1,4 @@
+ cart_host: cart.ramana.site
+ mysql_host: mysql.ramana.site
+ user_name: root
+ password: roboshop@1

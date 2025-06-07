@@ -12,3 +12,16 @@
   ansible.builtin.package:
     name: mysql
     state: present
+
+- name: Restore database ignoring errors
+  community.mysql.mysql_db:
+    name: all
+    login_user: "{{ user_name }}"
+    login_password: "{{ password }}" 
+    login_host: "{{mysql_host}}"
+    state: import
+    target: "{{ item }}"
+  loop:
+    - /app/db/schema.sql
+    - /app/db/app-user.sql 
+    - /app/db/master-data.sql
