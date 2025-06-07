@@ -1,17 +1,17 @@
 - name: appsetup
   include_role:
     name: common
-    role_from: appsetup.yaml
+    tasks_from: appsetup.yaml
 
 - name: install maven
   include_role:
     name: common
-    role_from: maven.yaml
+    tasks_from: maven.yaml
 
 - name: systemd setup
   include-role:
     name: common
-    tasK_from: serviceusersetup.yaml
+    tasks_from: serviceusersetup.yaml
 
 - name: install mysql
   ansible.builtin.package:
