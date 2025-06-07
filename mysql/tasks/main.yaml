@@ -18,4 +18,4 @@
   - botocore
 
 - name: changing root password
-  ansible.builtin.commad: mysql_secure_installation --set-root-pass {{ password }}
+  ansible.builtin.command: mysql_secure_installation --set-root-pass {{ password }}
