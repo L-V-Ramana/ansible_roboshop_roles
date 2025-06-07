@@ -1,7 +1,7 @@
 - name: install redis
   include_role:
    name: common
-   role_from: redis.yaml
+   tasks_from: redis.yaml
 
 
 - name: replace default ip address
