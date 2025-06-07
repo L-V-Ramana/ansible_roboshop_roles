@@ -1,0 +1,14 @@
+- name: appsetup
+  include_role:
+    name: common
+    tasks-from: appsetup.yaml
+  
+- name: nodejs setup
+  include_role:
+    name: common
+    tasks_from: nodejs.yaml
+
+- name: systemctl setup
+  include-role: 
+    name: common
+    tasks_from: serviceusersetup
