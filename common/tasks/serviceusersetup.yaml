@@ -1,0 +1,21 @@
+- name: create user
+  ansible.builtin.user:
+    name: roboshop
+    home: /app
+    shell: sbin/nologin
+    system: yes
+
+  name: copying "{{ component }}".service to systemd
+  ansible.builtin.copy:
+    src: "{{component}}.service.j2"
+    dest: /etc/systemd/system/{{component}}.service
+
+- name: system daemon reload
+  ansible.builtin.systemd_service:
+   daemon_reload: true
+
+- name: cataloge restart and enable
+  ansible.builtin.service:
+    name: "{{component}}" 
+    state: restatrted
+    enabled: yes
