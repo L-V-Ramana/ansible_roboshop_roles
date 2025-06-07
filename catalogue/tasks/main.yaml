@@ -2,9 +2,9 @@
   include_role:
     name: common
     tasks_from: nodejs.yaml
-    
+
 - name: app setup
-  incllude-role:
+  include_role:
     name: common
     tasks_from: appsetup.yaml
 
