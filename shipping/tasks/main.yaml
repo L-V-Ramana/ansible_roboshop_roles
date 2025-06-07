@@ -17,8 +17,8 @@
     name: "{{item}}"
     state: present
   loop:
-    - PyMySQL
-    - cryptography
+  - PyMySQL
+  - cryptography
 
 - name: Restore database ignoring errors
   community.mysql.mysql_db:
