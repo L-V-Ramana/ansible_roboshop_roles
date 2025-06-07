@@ -30,10 +30,6 @@
     url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
     dest: /tmp/frontend.zip
 
-- name: remove default nginx conf
-  ansible.builtin.file:
-    path: /etc/nginx/nginx.conf
-    state: absent
 
 - name: unzip frontend code
   ansible.builtin.unarchive:
@@ -41,11 +37,17 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
+- name: remove default nginx conf
+  ansible.builtin.file:
+    path: /etc/nginx/nginx.conf
+    state: absent
+
 - name: copy roboshop nginx conf
   ansible.builtin.copy:
       src: nginx.conf
       dest: /etc/nginx/nginx.conf
-
+  notify:
+    - restart nginx
 
 
 
