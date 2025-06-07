@@ -1,0 +1,22 @@
+- name: install redis
+  import_role:
+   name: common
+   role_from: redis.yaml
+
+
+- name: replace default ip address
+  ansible.builtin.replace:
+    regex: "127.0.0.1"
+    replace: "0.0.0.0"
+
+- name: replace protected mode
+  ansible.builtin.lineinfile:
+    path: /etc/redis/redis.conf
+    regexp: 'protected-mode'
+    line: protected-mode no
+
+- name: enable and start redis
+  ansible.builtin.service:
+      name: redis
+      state: started
+      enabled: yes

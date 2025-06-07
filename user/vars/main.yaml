@@ -1,0 +1,2 @@
+redis_host: redis.ramana.site
+mongo_host: mongodb.ramana.site

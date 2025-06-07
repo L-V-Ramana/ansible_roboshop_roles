@@ -1,0 +1,16 @@
+- name: nodejs setup
+  load_roles:
+    name: common
+    tasks_from: nodejs
+
+- name: creating system user and dowloading app
+  load_roles:
+    name: common
+    tasks_from: user
+
+- name: reload and restart system
+  import_roles:
+    name: common
+    tasks_from: systemreload
+
+
