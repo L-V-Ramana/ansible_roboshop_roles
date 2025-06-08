@@ -9,5 +9,14 @@
     state: started
     enabled: yes
 
+- name: installation of botocore and boto3
+  ansible.builtin.pip:
+   name: "{{ item }}"
+  loop:
+  - botocore
+  - boto3
+
 - name: changing root password
+  vars_files:
+  -  vault/mysql.yaml
   ansible.builtin.command: mysql_secure_installation --set-root-pass {{ password }}
