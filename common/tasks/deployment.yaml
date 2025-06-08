@@ -1,0 +1,29 @@
+- name: stopping the running serviceusersetup
+  ansible.builtin.service:
+    name: "{{ component }}"
+    state: stopped
+
+
+- name: removing exist app
+  tags:
+    - deployment
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: creating app directory
+  ansible.built.file:
+    state: directory
+    path: /app
+
+- name: downloading 
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-{{ app_version }}.zip 
+    dest: /app
+
+- name: installing npm dependeices
+
+- name: restart application:
+  import_role:
+    name: common
+    tasks_from: serviceusersetup.yaml
