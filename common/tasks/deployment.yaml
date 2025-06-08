@@ -21,7 +21,9 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-{{ app_version }}.zip 
     dest: /app
 
-- name: installing npm dependeices
+- name: install dependencies
+  community.general.npm:
+    path: /app
 
 - name: restart application:
   import_role:
