@@ -5,9 +5,9 @@
 
 
 - name: removing exist app
-  tags:
-    - deployment
-  ansible.builtin.file:
+  # tags:
+  #   - deployment
+  ansible.built.file:
     path: /app
     state: absent
 
