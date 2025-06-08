@@ -1,8 +1,9 @@
 - name: stopping the running serviceusersetup
+  tags:
+  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     state: stopped
-
 
 - name: removing exist app
   # tags:
