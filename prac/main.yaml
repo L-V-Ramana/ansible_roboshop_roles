@@ -1,0 +1,5 @@
+- name: "deployment of {{ component }}"
+  become: yes
+  hosts: "{{ component }}"
+  roles:
+  - "{{ component }}"
