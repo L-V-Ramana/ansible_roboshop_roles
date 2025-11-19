@@ -27,7 +27,7 @@
     state: present
 
 - name: check products loaded or not
-  ansible.builtin.command: mongosh --host mongodb.ramana.site --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+  ansible.builtin.command: mongosh --host {{ mongodb_server }} --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
   register: catalogue_output
   ignore_errors: true
   ignore_unreachable: true
@@ -39,7 +39,7 @@
   ignore_unreachable: true
 
 - name: load products
-  ansible.builtin.shell: mongosh --host mongodb.ramana.site < /app/db/master-data.js
+  ansible.builtin.shell: mongosh --host {{ mongodb_server }} < /app/db/master-data.js
   when: catalogue_output.stdout | int < 0
   ignore_errors: true
   ignore_unreachable: true

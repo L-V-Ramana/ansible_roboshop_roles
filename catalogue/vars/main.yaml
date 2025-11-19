@@ -1,1 +1,1 @@
-mongodb_server: mongodb.ramana.site
+mongodb_server: mongodb-{{ env }}.ramana.site
